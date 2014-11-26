@@ -18,7 +18,7 @@ public class SimpleProceduralCube : MonoBehaviour {
 
 	public GameObject createCube(Vector3 pos, Vector3 size){
 		GameObject cube = new GameObject();
-		cube.name = "invader_cube";
+		cube.name = "cube";
 		cube.AddComponent<MeshFilter>();
 		cube.AddComponent<MeshRenderer>();
 		MeshFilter meshFilter = cube.gameObject.GetComponent<MeshFilter>();
@@ -85,8 +85,10 @@ public class SimpleProceduralCube : MonoBehaviour {
 
 		mesh.uv = uvs.ToArray();
 
-		cube.renderer.material = new Material(Shader.Find("iJosShaders/cube_yellow_shader"));
-		
+		//cube.renderer.material = new Material(Shader.Find("iJosShaders/cube_yellow_shader"));
+		cube.renderer.material = new Material(Shader.Find("Diffuse"));
+
+
 		mesh.RecalculateNormals(); 
 		mesh.RecalculateBounds (); 
 		mesh.Optimize();
