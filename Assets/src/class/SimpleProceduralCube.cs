@@ -94,7 +94,7 @@ public class SimpleProceduralCube : MonoBehaviour {
 		mesh.Optimize();
 		
 		cube.gameObject.transform.position = pos;
-		//cube.gameObject.transform.localScale += size;
+		cube.gameObject.transform.localScale = size;
 
 		return cube;
 	}
