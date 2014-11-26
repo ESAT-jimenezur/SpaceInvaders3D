@@ -13,7 +13,7 @@ using System.Collections.Generic;
  */
 [RequireComponent (typeof (MeshFilter))] 
 [RequireComponent (typeof (MeshRenderer))]
-public class SimpleProceduralCube : MonoBehaviour {
+public class SimpleProceduralCube : ScriptableObject {
 	
 
 	public GameObject createCube(Vector3 pos, Vector3 size){
