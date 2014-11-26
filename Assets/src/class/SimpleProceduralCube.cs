@@ -85,7 +85,7 @@ public class SimpleProceduralCube : MonoBehaviour {
 
 		mesh.uv = uvs.ToArray();
 
-		cube.renderer.material = new Material(Shader.Find("Diffuse"));
+		cube.renderer.material = new Material(Shader.Find("iJosShaders/cube_yellow_shader"));
 		
 		mesh.RecalculateNormals(); 
 		mesh.RecalculateBounds (); 
