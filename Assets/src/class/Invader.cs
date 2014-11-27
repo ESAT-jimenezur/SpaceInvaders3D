@@ -43,7 +43,7 @@ public class Invader {
 	public Invader(){
 		invader_name_ = "invader";
 
-		quad_size 	=  0.0f;
+		quad_size 	=  1.0f;
 		cube_size_ 	= new Vector3(quad_size, quad_size, quad_size);
 		offset_ 	= 0.0f;
 	}
@@ -56,7 +56,8 @@ public class Invader {
 		for (int y = 0; y < invader_height_; y++){
 			for (int x = 0; x < invader_width_; x++){
 				if(invader_array[y, x] == 1){
-					SimpleProceduralCube simple_procedural_cube = new SimpleProceduralCube();
+					//SimpleProceduralCube simple_procedural_cube = new SimpleProceduralCube();
+					SimpleProceduralCube simple_procedural_cube = ScriptableObject.CreateInstance("SimpleProceduralCube")as SimpleProceduralCube; // New way to do this, removed above!
 					GameObject cube = simple_procedural_cube.createCube(new Vector3(cube_size_.x - x, cube_size_.y - y, 0.0f), cube_size_);
 					//GameObject cube = gameObject.GetComponent<SimpleProceduralCube>().createCube(new Vector3(cube_size_.x - x, cube_size_.y - y, 0.0f), cube_size_);
 					cube.transform.parent = invader_object.transform;

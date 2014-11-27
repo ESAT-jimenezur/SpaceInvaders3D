@@ -2,7 +2,7 @@
 using System.Collections;
 
 
-public class invader_spawner : MonoBehaviour {
+public class Spawner : MonoBehaviour {
 
 	
 	// Use this for initialization
