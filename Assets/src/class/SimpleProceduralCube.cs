@@ -21,6 +21,12 @@ public class SimpleProceduralCube : ScriptableObject {
 		cube.name = "cube";
 		cube.AddComponent<MeshFilter>();
 		cube.AddComponent<MeshRenderer>();
+
+		BoxCollider collider = cube.AddComponent<BoxCollider>();
+		collider.center = new Vector3(0.5f, 0.5f, 0.5f);
+		collider.extents = new Vector3(0.5f, 0.5f, 0.5f);
+
+
 		MeshFilter meshFilter = cube.gameObject.GetComponent<MeshFilter>();
 		//MeshFilter meshFilter = gameObject.GetComponent<MeshFilter>();
 		Mesh mesh = new Mesh ();
