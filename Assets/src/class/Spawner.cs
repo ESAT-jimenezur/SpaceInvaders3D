@@ -15,7 +15,8 @@ public class Spawner : MonoBehaviour {
 			invader.transform.Translate(new Vector3(0.0f + (i * 2), 0.0f, 0.0f));
 		}
 		*/
-		//GameObject[] wave = new Invader().createWave(10);
+
+		GameObject[] wave = new Invader().createWave(10, new Vector3(50.0f, 50.0f, 50.0f));
 	}
 
 

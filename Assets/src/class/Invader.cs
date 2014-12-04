@@ -69,15 +69,20 @@ public class Invader {
 	}
 	
 
-	/*
-	public GameObject[] createWave(int num){
-		GameObject[] invader_array;
+
+	public GameObject[] createWave(int num, Vector3 pos){
+		GameObject[] arr = new GameObject[num];
 		GameObject invader;
+		GameObject wave_object = new GameObject();
+		wave_object.name = "Wave";
 		for(int i = 0; i < num; i++){
-			invader = createInvader();
-			invader_array.SetValue(invader, i);
+			invader = new Invader().createInvader();
+			invader.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+			invader.transform.Translate(new Vector3(pos.x + (i * 2), pos.y, pos.z));
+			arr[i] = invader;
+			invader.transform.parent = wave_object.transform;
 		}
-		return invader_array;
+		return arr;
 	}
-	*/
+
 }
