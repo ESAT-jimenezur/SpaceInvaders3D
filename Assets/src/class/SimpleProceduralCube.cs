@@ -16,7 +16,7 @@ using System.Collections.Generic;
 public class SimpleProceduralCube : ScriptableObject {
 	
 
-	public GameObject createCube(Vector3 pos, Vector3 size){
+	public GameObject createCube(Vector3 pos, Vector3 size, String shader = "Diffuse"){
 		GameObject cube = new GameObject();
 		cube.name = "cube";
 		cube.AddComponent<MeshFilter>();
@@ -92,7 +92,7 @@ public class SimpleProceduralCube : ScriptableObject {
 		mesh.uv = uvs.ToArray();
 
 		//cube.renderer.material = new Material(Shader.Find("iJosShaders/cube_yellow_shader"));
-		cube.renderer.material = new Material(Shader.Find("Diffuse"));
+		cube.renderer.material = new Material(Shader.Find(shader));
 
 
 		mesh.RecalculateNormals(); 
