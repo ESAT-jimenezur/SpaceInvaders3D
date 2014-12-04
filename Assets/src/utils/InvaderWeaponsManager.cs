@@ -21,6 +21,7 @@ public class InvaderWeaponsManager : MonoBehaviour {
 		SimpleProceduralCube simple_procedural_cube = ScriptableObject.CreateInstance("SimpleProceduralCube")as SimpleProceduralCube; // New way to do this, removed above!
 		GameObject cube = simple_procedural_cube.createCube(new Vector3(transform.position.x, transform.position.y, transform.position.z + 2.0f), new Vector3(0.25f, 0.25f, 0.25f), "iJosShaders/cube_yellow_shader");
 		cube.AddComponent<Rigidbody>();
+		cube.AddComponent("DestroyDelay");
 		cube.rigidbody.AddForce(transform.forward * 5000);
 	}
 }
