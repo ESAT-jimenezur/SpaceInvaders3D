@@ -13,8 +13,9 @@ public class LookAt : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		targetPoint = new Vector3(objectToLook.transform.position.x, transform.position.y, objectToLook.transform.position.z) - transform.position;
+		targetPoint = new Vector3(objectToLook.transform.position.x, objectToLook.transform.position.y, objectToLook.transform.position.z) - transform.position;
+		Debug.Log (targetPoint);
 		targetRotation = Quaternion.LookRotation (-targetPoint, Vector3.up);
-		transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 2.0f);
+		transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 1.0f); // -> 1 second
 	}
 }
