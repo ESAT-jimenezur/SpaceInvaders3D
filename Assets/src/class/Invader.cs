@@ -52,14 +52,12 @@ public class Invader {
 	public GameObject createInvader(){
 		GameObject invader_object = new GameObject();
 		invader_object.name = invader_name_;
-		
+		invader_object.AddComponent("LookAt");
 		for (int y = 0; y < invader_height_; y++){
 			for (int x = 0; x < invader_width_; x++){
 				if(invader_array[y, x] == 1){
-					//SimpleProceduralCube simple_procedural_cube = new SimpleProceduralCube();
 					SimpleProceduralCube simple_procedural_cube = ScriptableObject.CreateInstance("SimpleProceduralCube")as SimpleProceduralCube; // New way to do this, removed above!
 					GameObject cube = simple_procedural_cube.createCube(new Vector3(cube_size_.x - x, cube_size_.y - y, 0.0f), cube_size_, "iJosShaders/cube_yellow_shader");
-					//GameObject cube = gameObject.GetComponent<SimpleProceduralCube>().createCube(new Vector3(cube_size_.x - x, cube_size_.y - y, 0.0f), cube_size_);
 					cube.transform.parent = invader_object.transform;
 				}
 			}
@@ -70,15 +68,17 @@ public class Invader {
 	
 
 
-	public GameObject[] createWave(int num, Vector3 pos){
+	public GameObject[] createWave(int num, float size, Vector3 pos){
 		GameObject[] arr = new GameObject[num];
 		GameObject invader;
 		GameObject wave_object = new GameObject();
 		wave_object.name = "Wave";
 		for(int i = 0; i < num; i++){
 			invader = new Invader().createInvader();
-			invader.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
-			invader.transform.Translate(new Vector3(pos.x + (i * 2), pos.y, pos.z));
+			invader.transform.localScale = new Vector3(size, size, size);
+			// TODO
+			// Fix size proportion with offset
+			invader.transform.Translate(new Vector3(pos.x + (i * size * 10), pos.y, pos.z));
 			arr[i] = invader;
 			invader.transform.parent = wave_object.transform;
 		}
