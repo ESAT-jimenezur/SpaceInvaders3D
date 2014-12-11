@@ -52,6 +52,7 @@ public class Invader {
 	public GameObject createInvader(){
 		GameObject invader_object = new GameObject();
 		invader_object.name = invader_name_;
+		invader_object.AddComponent<AudioSource>();
 		invader_object.AddComponent("LookAt");
 		invader_object.AddComponent("InvaderWeaponsManager");
 		for (int y = 0; y < invader_height_; y++){

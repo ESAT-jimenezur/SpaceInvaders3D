@@ -1,12 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+[RequireComponent(typeof(AudioSource))]
 public class InvaderWeaponsManager : MonoBehaviour {
 
 	private bool is_first_time_ = false;
+	private string[] shootSounds = new string[4]{"shoot1", "shoot2", "shoot3", "shoot4"};
 
 	// Use this for initialization
 	void Start () {
+		int randNum = Random.Range(0, shootSounds.Length);
+
+		AudioSource audio = gameObject.GetComponent("AudioSource") as AudioSource;
+		audio.clip = Resources.Load("sounds/" + shootSounds[randNum]) as AudioClip;
+
 		StartCoroutine(LoadWeapons());
 	}
 	
@@ -23,5 +31,6 @@ public class InvaderWeaponsManager : MonoBehaviour {
 		cube.AddComponent<Rigidbody>();
 		cube.AddComponent("DestroyDelay");
 		cube.rigidbody.AddForce(transform.forward * 5000);
+		audio.Play();
 	}
 }
