@@ -30,6 +30,14 @@ public class InvaderWeaponsManager : MonoBehaviour {
 		GameObject cube = simple_procedural_cube.createCube(new Vector3(transform.position.x, transform.position.y, transform.position.z + 2.0f), new Vector3(0.25f, 0.25f, 0.25f), "iJosShaders/cube_yellow_shader");
 		cube.AddComponent<Rigidbody>();
 		cube.AddComponent("DestroyDelay");
+
+
+		Light light = cube.AddComponent("Light") as Light;
+		light.light.color = Color.yellow;
+		light.light.range = 0.5f;
+		light.light.intensity = 1;
+		light.light.renderMode = LightRenderMode.ForcePixel;
+
 		cube.rigidbody.AddForce(transform.forward * 5000);
 		audio.Play();
 	}
