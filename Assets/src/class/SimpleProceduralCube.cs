@@ -102,6 +102,7 @@ public class SimpleProceduralCube : ScriptableObject {
 		cube.gameObject.transform.position = pos;
 		cube.gameObject.transform.localScale = size;
 
+		GameManager.cube_count++;
 		return cube;
 	}
 	

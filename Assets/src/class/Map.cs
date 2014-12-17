@@ -19,7 +19,7 @@ public class Map {
 		float starting_point_x_ 	= 0.0f;
 		float starting_point_y_ 	= 0.0f;
 		float starting_point_z_ 	= 0.0f;
-		int map_side_size_			= 40; // --> From center 128x128 blocks
+		int map_side_size_			= 50; // --> From center 128x128 blocks
 		int map_layers_				= 5;
 		float highness				= 0;
 

@@ -5,8 +5,8 @@ public class ShotDestroyable : MonoBehaviour {
 
 
 	void OnTriggerEnter(Collider other){
-		if(other.gameObject.tag == "DestroyerBullet"){
-			Debug.Log ("Col!");
+		if(other.gameObject.tag == "DestroyerBullet"){	
+			GameManager.cube_count--; // Remove one cube from our counter
 			Destroy(gameObject);
 		}
 			    

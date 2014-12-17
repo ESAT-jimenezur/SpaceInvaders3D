@@ -4,6 +4,8 @@ using System.Collections;
 public class GameManager : MonoBehaviour {
 
 	private static GameManager _instance;
+	private static bool debug = false;
+	public static int cube_count = 0;
 
 	public static GameManager instance{
 		get{
@@ -28,8 +30,18 @@ public class GameManager : MonoBehaviour {
 			_instance = this;
 			DontDestroyOnLoad(gameObject);
 			init ();
+
+
+
 		}else{
 			Destroy(gameObject);
+		}
+	}
+
+
+	void Update(){
+		if(debug){
+			Debug.Log(cube_count);
 		}
 	}
 

@@ -61,6 +61,7 @@ public class Invader {
 					SimpleProceduralCube simple_procedural_cube = ScriptableObject.CreateInstance("SimpleProceduralCube")as SimpleProceduralCube; // New way to do this, removed above!
 					GameObject cube = simple_procedural_cube.createCube(new Vector3(cube_size_.x - x, cube_size_.y - y, 0.0f), cube_size_, "iJosShaders/cube_yellow_shader");
 					cube.transform.parent = invader_object.transform;
+					cube.AddComponent("ShotDestroyable");
 				}
 			}
 		}
