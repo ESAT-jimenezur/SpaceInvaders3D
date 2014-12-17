@@ -12,9 +12,9 @@ public class Map {
 	 **/
 	public static void createMap(){
 		// Create a basic Squares Map
-		float cube_width_			= 2.0f;
+		float cube_width_			= 1.0f;
 		float cube_height_			= 0.1f;
-		float cube_deep_			= 2.0f;
+		float cube_deep_			= 1.0f;
 
 		float starting_point_x_ 	= 0.0f;
 		float starting_point_y_ 	= 0.0f;
