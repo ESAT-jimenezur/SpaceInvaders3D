@@ -41,7 +41,7 @@ public class InvaderWeaponsManager : MonoBehaviour {
 
 		GameObject laserShot = Instantiate(Resources.Load("prefabs/InvaderLaserShoot"), new Vector3(transform.position.x, transform.position.y, transform.position.z + 2.0f), Quaternion.identity) as GameObject;
 		laserShot.name = "laser_shot";
-		laserShot.rigidbody.AddForce(transform.forward * 5000);
+		laserShot.rigidbody.AddForce(transform.forward * 3000);
 		audio.Play();
 	}
 }
