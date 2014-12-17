@@ -36,6 +36,7 @@ public class Map {
 					//SimpleProceduralCube simple_procedural_cube = new SimpleProceduralCube();
 					SimpleProceduralCube simple_procedural_cube = ScriptableObject.CreateInstance("SimpleProceduralCube")as SimpleProceduralCube; // New way to do this, removed above!
 					GameObject cube = simple_procedural_cube.createCube(new Vector3(drawing_point_x + x, starting_point_y_ + highness, drawing_point_z + z), new Vector3(cube_width_, cube_height_, cube_deep_));
+					cube.AddComponent("ShotDestroyable");
 					cube.transform.parent = map_container.transform;
 				}
 			}

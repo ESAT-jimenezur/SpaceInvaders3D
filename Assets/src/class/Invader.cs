@@ -80,6 +80,7 @@ public class Invader {
 			invader.transform.localScale = new Vector3(size, size, size);
 			// TODO
 			// Fix size proportion with offset
+			// I think is fixed now! 17/12/2014
 			invader.transform.Translate(new Vector3(pos.x + (i * size * 10), pos.y, pos.z));
 			arr[i] = invader;
 			invader.transform.parent = wave_object.transform;
