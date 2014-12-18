@@ -7,10 +7,13 @@ public class InvaderWeaponsManager : MonoBehaviour {
 
 	private bool is_first_time_ = false;
 	private string[] shootSounds = new string[4]{"shoot1", "shoot2", "shoot3", "shoot4"};
+	private int randomShootTime;
 
 	// Use this for initialization
 	void Start () {
 		int randNum = Random.Range(0, shootSounds.Length);
+
+		randomShootTime = Random.Range(2, 8);
 
 		AudioSource audio = gameObject.GetComponent("AudioSource") as AudioSource;
 		audio.clip = Resources.Load("sounds/" + shootSounds[randNum]) as AudioClip;
@@ -20,7 +23,8 @@ public class InvaderWeaponsManager : MonoBehaviour {
 	
 	IEnumerator LoadWeapons(){
 		while(true){
-			yield return new WaitForSeconds(Random.Range(0, 10));
+			//yield return new WaitForSeconds(Random.Range(0, 10));
+			yield return new WaitForSeconds(randomShootTime); // This will be better for performance
 			Shoot();
 		}
 	}

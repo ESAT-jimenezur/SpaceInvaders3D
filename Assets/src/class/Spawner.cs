@@ -9,7 +9,7 @@ public class Spawner : MonoBehaviour {
 	void Awake () {
 
 
-		for(int i = 0; i < 20; i++){
+		for(int i = 0; i < 5; i++){
 			GameObject invader = new Invader().createInvader();
 			invader.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
 			invader.transform.Translate(GenerateRandomPos());
