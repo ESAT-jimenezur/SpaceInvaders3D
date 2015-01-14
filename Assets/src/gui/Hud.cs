@@ -5,6 +5,7 @@ public class Hud : MonoBehaviour {
 
 	private static bool is_reloading = false;
 	private Rect bullets_position = new Rect(Screen.width - 150, Screen.height - 35, 200, 80);
+	private Rect money_position = new Rect(Screen.width - 150, 35, 200, 80);
 	private GUIStyle gui_style = new GUIStyle();
 	private Font audiowide;
 	private string gui_bullets_text;
@@ -26,7 +27,12 @@ public class Hud : MonoBehaviour {
 		}
 
 		//Show Bullets
-		GUI.Label( bullets_position, gui_bullets_text,  gui_style); // Displays "10".
+		GUI.Label(bullets_position, gui_bullets_text,  gui_style); // Displays "10".
+
+
+
+		//Show Money
+		GUI.Label(money_position, "$" + Inventory.getCurrentMoney().ToString(), gui_style);
 	}
 
 	public static void isReloading(bool state){
