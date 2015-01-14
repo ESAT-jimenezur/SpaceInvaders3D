@@ -57,6 +57,9 @@ public class PlayerWeaponsManager : MonoBehaviour {
 						// you can play reload sound or animation here
 					}
 				}
+				if(Input.GetKeyDown(KeyCode.R) && pistol_current_mag_count != 10){
+					pistol_reload_timer = pistol_reload_total_time; // activate reloadTimer
+				}
 			}
 
 			break;
