@@ -13,14 +13,14 @@ public class Map {
 	public static void createMap(){
 		// Create a basic Squares Map
 		float cube_width_			= 1.0f;
-		float cube_height_			= 0.1f;
+		float cube_height_			= 0.25f;
 		float cube_deep_			= 1.0f;
 
 		float starting_point_x_ 	= 0.0f;
 		float starting_point_y_ 	= 0.0f;
 		float starting_point_z_ 	= 0.0f;
 		int map_side_size_			= 50; // --> From center 128x128 blocks
-		int map_layers_				= 5;
+		int map_layers_				= 3;
 		float highness				= 0;
 
 		float drawing_point_x		= starting_point_x_ - (map_side_size_ / 2);

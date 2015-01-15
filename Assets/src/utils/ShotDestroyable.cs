@@ -10,7 +10,8 @@ public class ShotDestroyable : MonoBehaviour {
 			if(transform.parent.name == "invader"){
 				Inventory.addMoney(10); // Adding 10 dollars when destroy each block
 			}
-			Destroy(gameObject);
+			Destroy(gameObject); //Destroy this object
+			Destroy(other.gameObject); //Destroy bullet too
 		}
 			    
 	}
