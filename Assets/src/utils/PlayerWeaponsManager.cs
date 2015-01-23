@@ -93,6 +93,9 @@ public class PlayerWeaponsManager : MonoBehaviour {
 		return pistol_mag_count;
 	}
 
-
+	public static void resetStats(){
+		pistol_mag_count = 10;
+		pistol_current_mag_count = 10;
+	}
 
 }

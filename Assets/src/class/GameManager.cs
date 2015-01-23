@@ -18,6 +18,10 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	public static void init(){
+
+		//Reset stats
+		Inventory.resetStats ();
+
 		//Map creation
 		Map.createMap();
 		Building.createShop(-20.0f, 1.0f, -20.0f);
@@ -29,7 +33,7 @@ public class GameManager : MonoBehaviour {
 	void Awake () {
 		if(_instance == null){
 			_instance = this;
-			DontDestroyOnLoad(gameObject);
+			//DontDestroyOnLoad(gameObject);
 			init ();
 		}else{
 			Destroy(gameObject);

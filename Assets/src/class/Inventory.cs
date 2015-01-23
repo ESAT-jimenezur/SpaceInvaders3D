@@ -16,8 +16,17 @@ public class Inventory : MonoBehaviour {
 	
 	}
 
+	public static void resetStats(){
+		current_money = 0;
+		total_money_earned = 0;
+	}
+
 	public static int getCurrentMoney(){
 		return current_money;
+	}
+
+	public static int getTotalMoney(){
+		return total_money_earned;
 	}
 
 	public static void addMoney(int money){
